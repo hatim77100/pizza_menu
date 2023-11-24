@@ -57,15 +57,25 @@ function App() {
 }
 
 function Header() {
-  return <h1>Fast React Pizza Co.</h1>;
+  return <h1 style={{ color: "red" }}>Fast React Pizza Co.</h1>;
 }
 
 function Menu() {
   return (
     <div>
       <h2>Our menu</h2>
-      <Pizza />
-      <Pizza />
+      <Pizza
+        name="Pizza Funghi"
+        ingredien="Tomato, mushrooms"
+        price="12"
+        photoName="pizzas/focaccia.jpg"
+      />
+      <Pizza
+        name="Pizza Funghi"
+        ingredien="Tomato, mushrooms"
+        price="12"
+        photoName="pizzas/funghi.jpg"
+      />
       <Pizza />
     </div>
   );
@@ -87,8 +97,15 @@ function Footer() {
   // return React.createElement("footer", null, "We're currently open");
 }
 
-function Pizza() {
-  return <h2>Pizza</h2>;
+function Pizza(props) {
+  return (
+    <div>
+      <img src={props.photoName} alt="" />
+      <h2>{props.name}</h2>
+      <p>{props.ingredient}</p>
+      <span>{props.price}</span>
+    </div>
+  );
 }
 
 // React v18
